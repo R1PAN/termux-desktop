@@ -31,6 +31,7 @@ unzip -o con.zip
 
 rm $PREFIX/bin/s &> /dev/null
 rm $PREFIX/bin/p &> /dev/null
+echo "vncserver" > $PREFIX/bin/p
 echo -e 'printf "\033[5;31mokeh🙋\\n"\nvncserver -kill :1 &> /dev/null\nvncserver -kill :2 &> /dev/null\nrm ~/.vnc/*.log &> /dev/null\nrm ~/.vnc/*.pid &> /dev/null' >> $PREFIX/bin/s
 chmod +x $PREFIX/bin/s
 chmod +x $PREFIX/bin/p
