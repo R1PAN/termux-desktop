@@ -1,7 +1,7 @@
 # Install-Desktop-Termux
 
 ```
-pkg install git wget -y; git clone https://github.com/R1PAN/termux-desktop; cd termux-desktop; bash i*; cd; rm -rf termux-desktop
+pkg install git wget -y; curl -sSL https://raw.githubusercontent.com/R1PAN/termux-desktop/r/install.sh | bash
 ```
 p : vncserver 
 
