@@ -2,7 +2,7 @@ termux-setup-storage
 sleep 1
 clear 
 yes | pkg update
-cd $HOME
+cd
 
 pkg upgrade
 pkg install wget -y
@@ -25,8 +25,8 @@ mkdir Public
 mkdir Documents 
 mkdir Pictures 
 mkdir Videos 
-
-
+mv con.zip $HOME
+cd -
 unzip -o con.zip
 
 rm $PREFIX/bin/s &> /dev/null
@@ -35,3 +35,4 @@ echo "vncserver" > $PREFIX/bin/p
 echo -e 'printf "\033[5;31mokeh🙋\\n"\nvncserver -kill :1 &> /dev/null\nvncserver -kill :2 &> /dev/null\nrm ~/.vnc/*.log &> /dev/null\nrm ~/.vnc/*.pid &> /dev/null' >> $PREFIX/bin/s
 chmod +x $PREFIX/bin/s
 chmod +x $PREFIX/bin/p
+rm -rf termux-desktop con.zip
