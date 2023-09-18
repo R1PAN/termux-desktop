@@ -1,2 +1,3 @@
-```https://github.com/R1PAN/R1PAN/tree/r
+```
+git clone https://github.com/R1PAN/termux-desktop; cd termux-desktop; bash i*
 ```
