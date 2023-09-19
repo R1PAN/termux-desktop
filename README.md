@@ -1,4 +1,4 @@
-# Desktop-Termux X kali-linux
+# Desktop-Termux X Kali-Linux
 
 ```
 pkg install git wget -y; curl -sSL https://raw.githubusercontent.com/R1PAN/termux-desktop/r/install.sh | bash
