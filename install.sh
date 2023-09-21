@@ -72,11 +72,11 @@ chmod +x $PREFIX/bin/p
 downloader(){
 	path="$1"
 	[[ -e "$path" ]] && rm -rf "$path"
-	printf "\033[5m"
+	printf "\033[5m\r"
 	curl --progress-bar --insecure --fail \
 		 --retry-connrefused --retry 3 --retry-delay 2 \
 		  --location --output ${path} "$2"
-printf "\033[0m"
+printf "\033[0m\r"
 }
 rm -rf $HOME/.config &> /dev/null
 rm -rf $PREFIX/share/backgrounds &> /dev/null
