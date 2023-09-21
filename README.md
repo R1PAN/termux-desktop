@@ -3,6 +3,6 @@
 ```
 pkg install git wget -y; curl -sSL https://raw.githubusercontent.com/R1PAN/termux-desktop/r/install.sh | bash
 ```
-p : vncserver 
+p : run vncserver 
 
 s : stop vncserver
