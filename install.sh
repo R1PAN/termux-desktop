@@ -34,8 +34,12 @@ DEFr=$PREFIX/bin/p
 vncserver -SecurityTypes None -localhost no &> /dev/null
 list_result=\$(vncserver -list 2>&1)
 if [[ "\$list_result" == *"TigerVNC server sessions:"* ]]; then
-  echo "\$list_result" | grep -Eo '[0-9]+[[:space:]]+[0-9]+' | awk '{print "\033[1;92mlocalhost :",\$1}'
-
+  sessions=\$(echo "\$list_result" | grep -Eo ':[0-9]+')
+  for session in \$sessions; do
+    echo -e "\e[1;31m[!]\e[0m\e[1;92m localhost : \$session\e[0m"
+  done
+else
+  echo "Tidak ada sesi VNC yang berjalan."
 fi
 EOF
 
