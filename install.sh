@@ -72,11 +72,10 @@ chmod +x $PREFIX/bin/p
 downloader(){
 	path="$1"
 	[[ -e "$path" ]] && rm -rf "$path"
-	printf "\033[5m\r"
+	
 	curl --progress-bar --insecure --fail \
 		 --retry-connrefused --retry 3 --retry-delay 2 \
 		  --location --output ${path} "$2"
-printf "\033[0m\r"
 }
 rm -rf $HOME/.config &> /dev/null
 rm -rf $PREFIX/share/backgrounds &> /dev/null
@@ -90,8 +89,8 @@ unzip -o backgrounds.zip
 unzip -o config.zip
 unzip -o icons.zip
 unzip -o themes.zip
-mv backgrounds $PREFIX/share/
-mv .config $HOME/
-mv icons $PREFIX/share/
-mv themes $PREFIX/share/
+mv backgrounds $PREFIX/share/ &> /dev/null
+mv .config $HOME/ &> /dev/null
+mv icons $PREFIX/share/ &> /dev/null
+mv themes $PREFIX/share/ &> /dev/null
 rm -rf backgrounds.zip config.zip icons.zip themes.zip
