@@ -36,10 +36,11 @@ list_result=\$(vncserver -list 2>&1)
 if [[ "\$list_result" == *"TigerVNC server sessions:"* ]]; then
   sessions=\$(echo "\$list_result" | grep -Eo ':[0-9]+')
   for session in \$sessions; do
-    echo -e "\e[1;91m[\e[32m◉\e[1;91m]\e[0m\e[1;92m localhost\$session\e[0m"
+    echo -e "\e[1;91m\e[32m◉\e[1;91m\e[0m\e[1;92m localhost\$session\e[0m"
   done
 else
-  echo "Tidak ada sesi VNC yang berjalan."
+echo ""
+  echo -e "\033[31mTidak ada sesi VNC yang berjalan('Rusak')\n"
 fi
 EOF
 
@@ -54,10 +55,15 @@ if [[ "\$list_result" == *"TigerVNC server sessions:"* ]]; then
     sessions=\$(echo "\$list_result" | grep -Eo ':[0-9]+' | sed 's/://')
     for session in \$sessions; do
         vncserver -kill :\$session &> /dev/null
-printf "\033[1;31m☠️ Kill-LocalHost : \$session\n"
+printf "\033[1;31m[>☠️<] Kill_LocalHost:\$session\n"
 rm ~/.vnc/*\$session.log &> /dev/null
 rm ~/.vnc/*\$session.pid &> /dev/null
 rm -rf /data/data/com.termux/files/usr/tmp/dbus* &> /dev/null
+    done
+fi
+        if [ -z "\$sessions" ]; then
+    echo -e "\033[5;31mGa_Ada_Sesi"
+fi
     done
 fi
         if [ -z "\$sessions" ]; then
