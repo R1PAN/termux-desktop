@@ -79,7 +79,7 @@ downloader(){
 	path="$1"
 	[[ -e "$path" ]] && rm -rf "$path"
 	
-	curl --progress-bar --insecure --fail \
+	curl -# --insecure --fail \
 		 --retry-connrefused --retry 3 --retry-delay 2 \
 		  --location --output ${path} "$2"
 }
