@@ -64,11 +64,7 @@ fi
         if [ -z "\$sessions" ]; then
     echo -e "\033[5;31mGa_Ada_Sesi"
 fi
-    done
-fi
-        if [ -z "\$sessions" ]; then
-    echo -e "\033[5;31mGa_Ada_Sesi"
-fi
+
 EOF
 
 
