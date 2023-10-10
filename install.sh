@@ -1,12 +1,10 @@
 
 #vncserver
-termux-setup-storage
+#termux-setup-storage
 sleep 1
 clear 
 yes | pkg update
 cd $HOME
-
-pkg upgrade
 pkg install wget -y
 yes | pkg update
 pkg upgrade
